@@ -37,9 +37,11 @@ $(TARGET): $(OBJS)
 	@$(GRUB) -o $(ISO) $(ISO_DIR) -- -report_about warning
 
 $(OUT)/%.o: $(SRC)/%.c | $(OUT)
+	@mkdir -p $(dir $@)
 	@$(CC) $(CC_FLAGS) -c -o $@ $<
 
 $(OUT)/%.o: $(SRC)/%.asm | $(OUT)
+	@mkdir -p $(dir $@)
 	@$(ASM) $(ASM_FLAGS) -o $@ $<
 
 $(OUT):
