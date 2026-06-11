@@ -18,23 +18,23 @@ typedef struct {
 } __attribute__((packed)) gdtPtr;
 
 typedef enum {
-    ACCESSED = 1 << 0,
-    READ_WRITE = 1 << 1,
-    DIR_CONF = 1 << 2,
-    EXECUTABLE = 1 << 3,
-    TYPE = 1 << 4,
-    PRESENT = 1 << 7,
+    GDT_ACCESSED = 1 << 0,
+    GDT_READ_WRITE = 1 << 1,
+    GDT_DIR_CONF = 1 << 2,
+    GDT_EXECUTABLE = 1 << 3,
+    GDT_TYPE = 1 << 4,
+    GDT_PRESENT = 1 << 7,
 
-    DPL_RING0 = 0 << 5,
-    DPL_RING1 = 1 << 5,
-    DPL_RING2 = 2 << 5,
-    DPL_RING3 = 3 << 5
+    GDT_DPL_RING0 = 0 << 5,
+    GDT_DPL_RING1 = 1 << 5,
+    GDT_DPL_RING2 = 2 << 5,
+    GDT_DPL_RING3 = 3 << 5
 } GDT_ACCESS;
 
 typedef enum {
-    CODE64 = 1 << 1,
-    MODE = 1 << 2,
-    GRANULARITY = 1 << 3
+    GDT_CODE64 = 1 << 1,
+    GDT_MODE = 1 << 2,
+    GDT_GRANULARITY = 1 << 3
 } GDT_FLAGS;
 
 void gdtInit();

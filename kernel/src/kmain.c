@@ -52,10 +52,12 @@ char* toString(int value, int base) {
 
 // Kernel entry
 #include <i386/gdt.h>
+#include <i386/int.h>
 
 void KernelMain()
 {
     gdtInit();
+    intInit();
 
     while(1);
 }
